@@ -20,10 +20,10 @@ const conn = mysql.createConnection({
 });
  
 //connect to database
-conn.connect((err) =>{
-  if(err) throw err;
-  console.log('Mysql Connected...');
-});
+// conn.connect((err) =>{
+//   if(err) throw err;
+//  console.log('Mysql Connected...');
+//});
  
 // Add headers
 app.use(function (req, res, next) {
@@ -57,13 +57,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //route for homepage
 app.get('/',(req, res) => {
   let sql = "SELECT * FROM product";
-  let query = conn.query(sql, (err, results) => {
-    if(err) throw err;
+  //let query = conn.query(sql, (err, results) => {
+    //if(err) throw err;
     res.json({ value: {results:'sucess'} })
     // res.render('product_view',{
     //   results: results
     // });
-  });
+  //});
 });
  
 //get data with filter
